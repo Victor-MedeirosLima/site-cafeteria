@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Editar Pedido</title>
+  <link rel="stylesheet" href="/css/style.css">
+
+  
+</head>
+<body>
+
+  <div id="navbar"></div>
+  <script>
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("navbar").innerHTML = html;
+
+    });
+</script>
+
+  <div class="container">
+    <h2>Editar Pedido</h2>
+
+    <form id="form-pedido">
+      <label for="produto">Produto</label>
+      <input type="text" id="produto" required />
+
+      <label for="quantidade">Quantidade</label>
+      <input type="number" id="quantidade" min="1" required />
+
+      <label for="total">Total (R$)</label>
+      <input type="number" step="0.01" id="total" required />
+
+      <button type="submit">Atualizar Pedido</button>
+    </form>
+  </div>
+
+  <script type="module" src="./js/pedido-form.js"></script>
+
+</body>
+</html>

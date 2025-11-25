@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cafeteria - Início</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  
+  <div id="navbar"></div>
+  <script>
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("navbar").innerHTML = html;
+      initNavbar();
+
+  
+  });
+
+    
+  if (window.location.pathname !== "/adm.html") {
+    const usuario = localStorage.getItem("usuarioLogado");
+    if (usuario) {
+      
+      localStorage.removeItem("usuarioLogado");
+    }
+  }
+</script>
+  <script src="./js/navbar.js"></script>
+  <script type="module" src="/js/produtos.js"></script>
+  <h1>Bem-vindo à Cafeteria</h1>
+  <div id="lista-produtos-exibicao"></div>
+
+
+  
+</body>
+</html>

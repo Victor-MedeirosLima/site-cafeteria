@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="css/style.css">
+  
+</head>
+
+<body>
+
+    <div id="navbar" style="display:none;"></div>
+    <script>
+    fetch("navbar.html")
+        .then(res => res.text())
+        .then(html => {
+        document.getElementById("navbar").innerHTML = html;
+        initNavbar();
+
+
+        });
+    </script>
+    <script src="./js/navbar.js"></script>
+
+  <div class="box">
+    <h2>Login Administrativo</h2>
+
+    <form id="form-login">
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="senha" placeholder="Senha" required />
+      <button type="submit">Entrar</button>
+    </form>
+
+    <p id="msg" style="color:red;"></p>
+  </div>
+
+  <script type="module" src="./js/login.js"></script>
+</body>
+</html>

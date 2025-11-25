@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Produtos</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <script>
+  const user = localStorage.getItem("usuarioLogado");
+  if (!user) {
+    // Não está logado → volta pro login
+    window.location.href = "login.html";
+  }
+  </script>
+
+  
+  <div id="navbar" style="display:none;"></div>
+  <script>
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("navbar").innerHTML = html;
+
+
+    });
+  </script>
+  <h1>Painel Administrativo</h1>
+
+  <button id="btn-logout" style="margin-bottom: 20px;">Logout</button>
+
+  <h1>Produtos</h1>
+
+  <button onclick="window.location.href='produto-form.html'">
+    Novo Produto
+  </button>
+
+  <div id="lista-produtos"></div>
+
+
+  <h1>Pedidos</h1>
+
+  <div id="lista-pedidos"></div>
+
+
+  <script>
+  // Se não estiver logado  volta para login
+  const usuario = localStorage.getItem("usuarioLogado");
+  if (!usuario) {
+    window.location.href = "login.html";
+  }
+
+  // Botão de logout que remove o login e volta para login
+  document.getElementById("btn-logout").addEventListener("click", () => {
+    localStorage.removeItem("usuarioLogado");
+    window.location.href = "index.html";
+  });
+</script>
+
+  <script type="module" src="/js/produtos.js"></script>
+  <script type="module" src="/js/pedidos.js"></script>
+</body>
+</html>
