@@ -1,8 +1,7 @@
 import { apiPost, apiGet } from "./api.js";
 
-// -------------------------
+
 // Carregar carrinho
-// -------------------------
 function carregarCarrinho() {
   const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
   const lista = document.getElementById("lista-carrinho");
@@ -34,9 +33,8 @@ function carregarCarrinho() {
 carregarCarrinho();
 
 
-// -------------------------
+
 // Buscar usuário pelo email
-// -------------------------
 document.getElementById("buscar-usuario").addEventListener("click", async () => {
   const email = document.getElementById("email-usuario").value.trim();
   const divDados = document.getElementById("dados-usuario");
@@ -57,7 +55,7 @@ document.getElementById("buscar-usuario").addEventListener("click", async () => 
   divDados.style.display = "block";
 
   if (usuario && usuario.id) {
-    // Usuário existe → apenas mostra o nome
+
     nomeInput.value = usuario.nome;
     nomeInput.readOnly = true;
 
@@ -65,7 +63,7 @@ document.getElementById("buscar-usuario").addEventListener("click", async () => 
 
     divDados.setAttribute("data-usuario-id", usuario.id);
   } else {
-    // Usuário novo → permite digitar nome
+  
     nomeInput.value = "";
     nomeInput.readOnly = false;
 
@@ -76,9 +74,8 @@ document.getElementById("buscar-usuario").addEventListener("click", async () => 
 });
 
 
-// -------------------------
+
 // Finalizar pedido
-// -------------------------
 document.getElementById("finalizar").addEventListener("click", async () => {
 
   const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
@@ -135,9 +132,8 @@ document.getElementById("finalizar").addEventListener("click", async () => {
 });
 
 
-// -------------------------
+
 // Funções globais do carrinho
-// -------------------------
 window.alterarQtd = function(id, delta) {
   let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 

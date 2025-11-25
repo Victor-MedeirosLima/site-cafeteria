@@ -28,7 +28,7 @@ document.getElementById("formProduto").addEventListener("submit", async (e) => {
   }
 
   alert("Salvo com sucesso!");
-  window.location.href = "produtos.html";
+  window.location.href = "adm.html";
 });
 
 carregar();

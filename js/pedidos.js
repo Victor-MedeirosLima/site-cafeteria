@@ -17,7 +17,6 @@ async function carregarPedidos() {
       emailCliente = p.usuarios.email;
     }
 
-    //  Buscar dados reais do produto pelo ID
     const produto = await apiGet(`/produtos/${p.produto}`);
     const nomeProduto = produto.nome;
 

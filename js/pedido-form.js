@@ -31,5 +31,5 @@ document.getElementById("form-pedido").addEventListener("submit", async (e) => {
   window.location.href = "adm.html";
 });
 
-// carregar os dados ao abrir a página
+
 carregarPedido();

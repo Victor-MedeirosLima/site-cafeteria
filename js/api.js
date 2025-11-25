@@ -1,4 +1,4 @@
-const API_URL = "https://projeto-cafeteria-servidor.onrender.com"; // sua API Node
+const API_URL = "https://projeto-cafeteria-servidor.onrender.com"; 
 
 async function apiGet(endpoint) {
   const res = await fetch(API_URL + endpoint);

@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <title>Produtos</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
   <script>
   const user = localStorage.getItem("usuarioLogado");
   if (!user) {
-    // Não está logado → volta pro login
+
     window.location.href = "login.html";
   }
   </script>
@@ -45,7 +45,7 @@
 
 
   <script>
-  // Se não estiver logado  volta para login
+
   const usuario = localStorage.getItem("usuarioLogado");
   if (!usuario) {
     window.location.href = "login.html";
@@ -58,7 +58,7 @@
   });
 </script>
 
-  <script type="module" src="/js/produtos.js"></script>
-  <script type="module" src="/js/pedidos.js"></script>
+  <script type="module" src="./js/produtos.js"></script>
+  <script type="module" src="./js/pedidos.js"></script>
 </body>
 </html>
